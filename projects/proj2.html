@@ -1,0 +1,119 @@
+<article class="case-study case-study-proj3" id="project-proj3" data-project="proj3">
+  <div class="case-heading">
+    <div>
+      <p class="eyebrow">03 / ESP32-C3 &middot; RF &middot; POWER</p>
+      <h2>
+        A small system,
+        <em>end to end.</em>
+      </h2>
+      <p class="case-lead">
+        A compact four-layer low-power IoT plant-node design that brings wireless connectivity, battery charging, power conversion and motor control onto one board.
+      </p>
+    </div>
+    <span class="status-label status-design">PCB DESIGN</span>
+  </div>
+
+  <div class="project-gallery project-gallery-proj3 gallery-proj3" data-project-gallery="proj3" aria-label="ESP32-C3 IoT board imagery">
+    <figure class="gallery-item gallery-item-proj3 gallery-main gallery-main-proj3" data-reveal>
+      <img alt="Three-dimensional render of the ESP32-C3 low-power IoT plant-node board" loading="lazy" src="images/esp32-3d.png"/>
+      <figcaption><span>01</span> ESP32-C3 / BOARD OVERVIEW</figcaption>
+    </figure>
+    <figure class="gallery-item gallery-item-proj3 gallery-detail gallery-detail-proj3" data-reveal>
+      <img alt="Close-up of the custom 2.4 GHz RF section" loading="lazy" src="images/esp32-back.png"/>
+      <figcaption><span>02</span> PCB / BACK</figcaption>
+    </figure>
+    <figure class="gallery-item gallery-item-proj3 gallery-wide gallery-wide-proj3" data-reveal>
+      <img alt="PCB layout showing the power and analog domains" loading="lazy" src="images/esp-power-rail.png"/>
+      <figcaption><span>03</span> SIMULATION / POWER RAIL TRANSIANT RESPONSE</figcaption>
+    </figure>
+    <figure class="gallery-item gallery-item-proj3 gallery-float gallery-float-proj3" data-reveal>
+      <img alt="Power-tree schematic for the ESP32-C3 board" loading="lazy" src="images/esp32-front.png"/>
+      <figcaption><span>04</span> PCP / FRONT</figcaption>
+    </figure>
+    <figure class="gallery-item gallery-item-proj3 gallery-extra gallery-extra-proj3" data-reveal>
+      <img alt="Schematic detail for sensors, motor driver and battery charging" loading="lazy" src="images/esp-transiant-rail.png"/>
+      <figcaption><span>05</span> SIMULATION / IMPEDENCE VS FREQUENCY</figcaption>
+    </figure>
+  </div>
+
+  <div class="case-content-grid">
+    <div class="case-content">
+      <h3>Engineering focus</h3>
+      <p>
+        The design brings together a custom 2.4 GHz RF section, battery charging, a boosted 5 V motor rail, a dedicated 3.3 V logic/analog supply and sensor connectivity. The intent is to keep power conversion and RF layout constraints visible from the beginning.
+      </p>
+      <p>
+        The schematic, PCB layout and power-path choices have been developed as a design exercise. Assembly and hardware bring-up have not been completed, so measured RF performance and end-to-end behavior are not claimed.
+      </p>
+    </div>
+
+    <aside class="spec-panel">
+      <h3>Design scope</h3>
+      <dl>
+        <div>
+          <dt>Wireless MCU</dt>
+          <dd>ESP32-C3</dd>
+        </div>
+        <div>
+          <dt>PCB</dt>
+          <dd>Four layers</dd>
+        </div>
+        <div>
+          <dt>Power</dt>
+          <dd>MCP73831 &middot; TPS61200 &middot; TLV75733</dd>
+        </div>
+        <div>
+          <dt>RF</dt>
+          <dd>2.4 GHz layout considerations</dd>
+        </div>
+        <div>
+          <dt>Status</dt>
+          <dd>Design stage; not assembled</dd>
+        </div>
+      </dl>
+    </aside>
+  </div>
+
+  <section class="documentation-block" aria-label="ESP32-C3 board documentation">
+    <div class="documentation-heading">
+      <p class="eyebrow">ENGINEERING NOTES / 03</p>
+      <h3>RF, power and sensing <em>on one board.</em></h3>
+      <p>A design-focused case study showing how the major electrical domains fit together.</p>
+    </div>
+
+    <div class="documentation-grid">
+      <article>
+        <span class="doc-index">A / RF</span>
+        <h4>Wireless layout</h4>
+        <p>Custom 2.4 GHz RF section with layout constraints considered alongside the rest of the board.</p>
+      </article>
+      <article>
+        <span class="doc-index">B / POWER</span>
+        <h4>Power-path integration</h4>
+        <p>MCP73831 charging, TPS61200 boosted 5 V motor rail and TLV75733 3.3 V logic/analog supply.</p>
+      </article>
+      <article>
+        <span class="doc-index">C / STATUS</span>
+        <h4>Design stage</h4>
+        <p>Schematic and PCB design are complete as a design exercise; assembly, bring-up and measured RF validation remain future work.</p>
+      </article>
+    </div>
+
+    <div class="documentation-links">
+      <span>SOURCE / DOCUMENTATION</span>
+      <a href="https://github.com/mohamed-sebbar/ESP32-C3-Low-Power-IoT-Plant-Node" target="_blank" rel="noreferrer">GitHub Repository <b>↗</b></a>
+      <!-- 
+      <a href="mailto:sebbar.mohamed66@gmail.com?subject=ESP32-C3%20board%20documentation">Request design files <b>↗</b></a>
+      -->
+    </div>
+  </section>
+
+  <details class="case-detail">
+    <summary>More about the power architecture</summary>
+    <div class="detail-body">
+      <p>
+        The power tree separates the boosted motor supply from the 3.3 V logic/analog domain. Component choices and the layout are documented in the design files; physical validation remains a separate next step.
+      </p>
+    </div>
+  </details>
+</article>

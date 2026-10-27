@@ -1,0 +1,1240 @@
+
+/* ─────────────────────────────────────────────────────────────
+   CINEMATIC EDITORIAL LAYER
+   Image-led, spacious, restrained, responsive
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  --editorial-gutter: clamp(22px, 5.5vw, 92px);
+  --editorial-space: clamp(84px, 11vw, 172px);
+  --editorial-line: var(--line, rgba(100, 100, 100, .25));
+  --editorial-muted: var(--muted, #767a73);
+  --editorial-ink: var(--ink, #171a16);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 92px;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--green, #b7ef74);
+  color: #10130f;
+}
+
+.site-shell {
+  max-width: 1760px;
+  margin-inline: auto;
+  overflow: clip;
+}
+
+.site-header {
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.site-header,
+.main-nav a,
+.header-contact,
+.theme-toggle {
+  transition:
+    background-color .35s ease,
+    color .35s ease,
+    border-color .35s ease,
+    opacity .35s ease;
+}
+
+.section-pad {
+  padding-inline: var(--editorial-gutter);
+}
+
+/* ── Home hero ─────────────────────────────────────────────── */
+
+.hero {
+  padding-top: clamp(76px, 10vw, 150px);
+  padding-bottom: clamp(76px, 9vw, 130px);
+}
+
+.hero h1,
+.page-hero h1 {
+  letter-spacing: -.075em;
+  line-height: .94;
+  max-width: 1100px;
+}
+
+.hero-intro,
+.page-lead {
+  max-width: 680px;
+  line-height: 1.85;
+}
+
+/* ── Interior page hero ────────────────────────────────────── */
+
+.page-hero {
+  padding-top: clamp(100px, 14vw, 210px);
+  padding-bottom: clamp(66px, 8vw, 120px);
+}
+
+.page-hero h1 {
+  font-size: clamp(64px, 11vw, 156px);
+}
+
+.page-hero .page-lead {
+  font-size: clamp(16px, 1.45vw, 20px);
+  margin-top: 32px;
+}
+
+.page-hero-meta {
+  margin-top: clamp(44px, 7vw, 90px);
+  padding-top: 18px;
+}
+
+/* ── Work introduction ─────────────────────────────────────── */
+
+.case-studies {
+  padding-top: 0;
+}
+
+.work-intro-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0 28px;
+  margin-bottom: clamp(64px, 9vw, 132px);
+  border-top: 1px solid var(--editorial-line);
+  color: var(--editorial-muted);
+  font: 10px/1.5 'DM Mono', monospace;
+  letter-spacing: .12em;
+}
+
+/* ── Case study structure ──────────────────────────────────── */
+
+.case-study {
+  padding: 0 0 clamp(80px, 11vw, 150px);
+  margin: 0 0 clamp(64px, 9vw, 120px);
+  border-bottom: 1px solid var(--editorial-line);
+}
+
+.case-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(120px, .35fr);
+  align-items: end;
+  gap: 32px;
+  margin-bottom: clamp(36px, 5vw, 68px);
+}
+
+.case-heading h2 {
+  font-size: clamp(48px, 7.8vw, 112px);
+  line-height: .94;
+  letter-spacing: -.075em;
+  max-width: 1000px;
+  margin: 22px 0 24px;
+}
+
+.case-heading .case-lead {
+  max-width: 640px;
+  font-size: clamp(16px, 1.4vw, 20px);
+  line-height: 1.8;
+}
+
+.status-label {
+  justify-self: end;
+  align-self: start;
+  margin-top: 6px;
+}
+
+/* ── Project image galleries ─────────────────────────────────
+   The grid controls placement, not image height.
+   Images retain their own aspect ratios.
+   ──────────────────────────────────────────────────────────── */
+
+.project-gallery {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: auto;
+  align-items: start;
+  gap: clamp(14px, 2vw, 28px);
+  margin: 0 0 clamp(64px, 8vw, 112px);
+  isolation: isolate;
+}
+
+.gallery-item {
+  min-width: 0;
+  position: relative;
+  align-self: start;
+  margin: 0;
+  overflow: hidden;
+
+  /* Transparent frame: no artificial block behind the image. */
+  background: transparent;
+  border-radius: 2px;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center;
+  transition:
+    transform 1.2s cubic-bezier(.2, .7, .2, 1),
+    filter .8s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.025);
+}
+
+/* Keep captions overlaid without adding a solid panel. */
+.gallery-item figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  padding: 30px 20px 16px;
+  color: #f6f5f0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, .12) 35%,
+    rgba(0, 0, 0, .72) 100%
+  );
+
+  font: 9px/1.5 'DM Mono', monospace;
+  letter-spacing: .12em;
+  pointer-events: none;
+}
+
+.gallery-item figcaption span {
+  opacity: .72;
+}
+
+/* Default staggered arrangement. */
+.gallery-main {
+  grid-column: 1 / span 8;
+  grid-row: auto;
+  min-height: 0;
+}
+
+.gallery-detail {
+  grid-column: 9 / span 4;
+  grid-row: auto;
+  margin-top: 8%;
+  min-height: 0;
+  z-index: 2;
+}
+
+.gallery-wide {
+  grid-column: 3 / span 7;
+  grid-row: auto;
+  margin-top: 0rem;
+  min-height: 0;
+  z-index: 1;
+}
+
+.gallery-float {
+  grid-column: 9 / span 4;
+  grid-row: auto;
+  margin-top: 10%;
+  min-height: 0;
+  z-index: 2;
+}
+
+.gallery-extra {
+  grid-column: 1 / span 4;
+  grid-row: auto;
+  margin-top: 0rem;
+  min-height: 0;
+}
+
+/* STM32 gallery: offset hero, overlapping detail, lower wide image. */
+.gallery-proj2 .gallery-main {
+  grid-column: 2 / span 9;
+  grid-row: auto;
+}
+
+.gallery-proj2 .gallery-detail {
+  grid-column: 1 / span 4;
+  grid-row: auto;
+  margin-top: 2rem;
+}
+
+.gallery-proj2 .gallery-wide {
+  grid-column: 6 / span 7;
+  grid-row: auto;
+  margin-top: 0rem;
+}
+
+/* ESP32 gallery: alternate the direction of the composition. */
+.gallery-proj3 .gallery-main {
+  grid-column: 2 / span 9;
+  grid-row: auto;
+}
+
+.gallery-proj3 .gallery-detail {
+  grid-column: 9 / span 4;
+  grid-row: auto;
+  margin-top: -12%;
+}
+
+.gallery-proj3 .gallery-wide {
+  grid-column: 1 / span 7;
+  grid-row: auto;
+  margin-top: 0;
+}
+
+.gallery-proj3 .gallery-float {
+  grid-column: 8 / span 5;
+  grid-row: auto;
+  margin-top: 8%;
+}
+
+.gallery-proj3 .gallery-extra {
+  grid-column: 2 / span 5;
+  grid-row: auto;
+  margin-top: -3%;
+}
+
+/* Missing images: preserve transparency rather than displaying
+   a fake solid or gradient image panel. */
+.gallery-item.no-img {
+  min-height: 0;
+  aspect-ratio: 4 / 3;
+  background: transparent;
+  border: 1px dashed var(--editorial-line);
+}
+
+.gallery-item.no-img img {
+  display: none;
+}
+
+.gallery-item.no-img::before {
+  content: 'IMAGE SLOT / ADD PROJECT ASSET';
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font: 9px 'DM Mono', monospace;
+  letter-spacing: .12em;
+  color: var(--editorial-muted);
+}
+
+.gallery-item.no-img figcaption {
+  color: var(--editorial-ink);
+  background: transparent;
+  text-shadow: none;
+}
+
+/* ── Case study text and technical specs ───────────────────── */
+
+.case-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(270px, .65fr);
+  gap: clamp(36px, 9vw, 140px);
+  align-items: start;
+  margin-bottom: clamp(48px, 7vw, 96px);
+}
+
+.case-content h3,
+.spec-panel h3 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  margin-bottom: 24px;
+}
+
+.case-content p {
+  max-width: 680px;
+  font-size: clamp(16px, 1.35vw, 19px);
+  line-height: 1.95;
+}
+
+/* No opaque card background. */
+/* Project specification panel */
+.spec-panel {
+    box-sizing: border-box;
+    min-width: 0;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--paper-card);
+}
+
+.spec-panel h3 {
+    margin: 0 0 12px;
+    padding: 0 0 18px;
+}
+
+.spec-panel dl {
+    margin: 0;
+    padding: 0;
+}
+
+.spec-panel dl > div {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 20px;
+    align-items: start;
+    padding: 16px 12px;
+    border-bottom: 1px solid var(--line, #d8d8d0);
+}
+
+.spec-panel dl > div:first-child {
+    padding-top: 12px;
+}
+
+.spec-panel dl > div:last-child {
+    padding-bottom: 12px;
+    border-bottom: none;
+}
+
+.spec-panel dt {
+    margin: 0;
+    color: var(--muted, #767a73);
+    font: 10px/1.7 'DM Mono', monospace;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.spec-panel dd {
+    min-width: 0;
+    margin: 0;
+    color: var(--ink, #171a16);
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* ── Documentation ─────────────────────────────────────────── */
+
+.documentation-block {
+  margin: clamp(64px, 9vw, 120px) 0 34px;
+  padding: clamp(28px, 5vw, 68px);
+   background: var(--paper-deep);
+  color: inherit;
+  border-top: 1px solid var(--editorial-line);
+  border-bottom: 1px solid var(--editorial-line);
+  border-radius: 0;
+}
+
+.documentation-heading {
+  display: grid;
+  grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr);
+  column-gap: 32px;
+  align-items: start;
+  padding-bottom: clamp(34px, 5vw, 66px);
+}
+
+.documentation-heading .eyebrow {
+  grid-column: 1 / -1;
+  margin-bottom: 28px;
+}
+
+.documentation-heading h3 {
+  grid-column: 1;
+  font-size: clamp(32px, 4.5vw, 60px);
+  line-height: 1.03;
+  letter-spacing: -.06em;
+  margin: 0;
+}
+
+.documentation-heading > p:last-child {
+  grid-column: 2;
+  max-width: 460px;
+  line-height: 1.85;
+  margin: 5px 0 0;
+  color: var(--editorial-muted);
+}
+
+.documentation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--editorial-line);
+  border-bottom: 1px solid var(--editorial-line);
+}
+
+.documentation-grid article {
+  padding: 26px 24px 30px 0;
+}
+
+.documentation-grid article + article {
+  border-left: 1px solid var(--editorial-line);
+  padding-left: 24px;
+}
+
+.doc-index {
+  display: block;
+  font: 9px 'DM Mono', monospace;
+  letter-spacing: .12em;
+  color: var(--editorial-muted);
+  margin-bottom: 30px;
+}
+
+.documentation-grid h4 {
+  font-size: 16px;
+  margin: 0 0 12px;
+}
+
+.documentation-grid p {
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--editorial-muted);
+  margin: 0;
+}
+
+.documentation-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+  padding-top: 25px;
+}
+
+.documentation-links > span {
+  margin-right: auto;
+  font: 9px 'DM Mono', monospace;
+  letter-spacing: .12em;
+  color: var(--editorial-muted);
+}
+
+.documentation-links a {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 13px;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 6px;
+}
+
+.documentation-links a b {
+  font-weight: 400;
+  transition: transform .3s ease;
+}
+
+.documentation-links a:hover b {
+  transform: translate(3px, -3px);
+}
+
+/* ── Expandable technical detail ───────────────────────────── */
+
+.case-detail {
+  margin-top: 20px;
+  border-top: 1px solid var(--editorial-line);
+  background: transparent;
+  color: inherit;
+}
+
+.case-detail summary {
+  padding: 22px 0;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* The detail body must not introduce a colored panel. */
+.detail-body {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 760px;
+  padding: 0 0 24px;
+  margin: 0;
+
+  background: transparent;
+  color: inherit;
+
+  font-size: 15px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.detail-body p {
+  margin: 0 0 18px;
+}
+
+.detail-body p:last-child {
+  margin-bottom: 0;
+}
+
+.detail-body h3,
+.detail-body h4 {
+  color: inherit;
+  line-height: 1.3;
+}
+
+.detail-body a {
+  color: inherit;
+  text-decoration-color: var(--editorial-muted);
+  text-underline-offset: 4px;
+}
+
+/* ── Cinematic full-width frame ────────────────────────────── */
+
+.cinematic-band {
+  padding: 0 var(--editorial-gutter) clamp(76px, 10vw, 140px);
+}
+
+.cinematic-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font: 9px 'DM Mono', monospace;
+  letter-spacing: .13em;
+  color: var(--editorial-muted);
+  padding: 18px 0;
+  border-top: 1px solid var(--editorial-line);
+}
+
+/* Let the image determine the frame height. */
+.cinematic-frame {
+  position: relative;
+  margin: 0;
+  height: auto;
+  overflow: hidden;
+  background: transparent;
+}
+
+.cinematic-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 1.5s cubic-bezier(.2, .7, .2, 1);
+}
+
+.cinematic-frame:hover img {
+  transform: scale(1.015);
+}
+
+.cinematic-frame figcaption {
+  position: absolute;
+  left: clamp(20px, 4vw, 56px);
+  bottom: clamp(20px, 4vw, 56px);
+  color: #fff;
+  font: 10px 'DM Mono', monospace;
+  letter-spacing: .14em;
+  text-shadow: 0 2px 20px #000;
+}
+
+.cinematic-frame.no-img {
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+  background: transparent;
+  border: 1px dashed var(--editorial-line);
+}
+
+.cinematic-frame.no-img img {
+  display: none;
+}
+
+.cinematic-frame.no-img::before {
+  content: 'YOUR BLENDER HERO RENDER';
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  font: 10px 'DM Mono', monospace;
+  letter-spacing: .14em;
+  color: var(--editorial-muted);
+}
+
+/* ── Scroll reveal ──────────────────────────────────────────── */
+
+[data-reveal] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity .9s ease,
+    transform 1s cubic-bezier(.2, .7, .2, 1);
+}
+
+.reveal-ready [data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Preserve staggered offsets without hard-coding image heights. */
+.reveal-ready .gallery-detail.is-revealed {
+  transform: translateY(8%);
+}
+
+.reveal-ready .gallery-float.is-revealed {
+  transform: translateY(8%);
+}
+
+.reveal-ready .gallery-proj2 .gallery-detail.is-revealed {
+  transform: translateY(0rem);
+}
+
+.reveal-ready .gallery-proj3 .gallery-detail.is-revealed {
+  transform: translateY(2rem);
+}
+
+
+
+
+
+
+
+
+/* ── RESEARCH PUBLICATION ─────────────────────────────────── */
+
+.publication-card {
+  position: relative;
+  margin: clamp(36px, 5vw, 72px) 0;
+  overflow: hidden;
+  border: 1px solid var(--line, rgba(128, 128, 128, 0.3));
+  background: var(--surface, rgba(128, 128, 128, 0.035));
+}
+
+.publication-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 22px;
+  border-bottom: 1px solid var(--line, rgba(128, 128, 128, 0.3));
+}
+
+.publication-kicker,
+.publication-status,
+.publication-footer {
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.publication-kicker {
+  color: var(--text-muted, #888);
+}
+
+.publication-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted, #888);
+}
+
+.publication-status-dot {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: #a18b63;
+}
+
+.publication-body {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: clamp(22px, 4vw, 48px);
+  align-items: start;
+  padding: clamp(24px, 4vw, 48px);
+}
+
+.publication-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding-top: 5px;
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--text-muted, #888);
+}
+
+.publication-mark span:first-child {
+  font-size: 29px;
+  line-height: 1;
+  letter-spacing: -0.07em;
+  color: var(--text, inherit);
+}
+
+.publication-mark-line {
+  width: 42px;
+  height: 1px;
+  margin: 12px 0 7px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.publication-mark .publication-mark-year {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.publication-copy {
+  min-width: 0;
+}
+
+.publication-journal {
+  margin: 0 0 14px;
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  line-height: 1.7;
+  color: var(--text-muted, #888);
+}
+
+.publication-copy h3 {
+  max-width: 780px;
+  margin: 0;
+  font-size: clamp(21px, 2.5vw, 32px);
+  font-weight: 500;
+  line-height: 1.24;
+  letter-spacing: -0.035em;
+  text-wrap: pretty;
+}
+
+.publication-authors {
+  margin: 20px 0 0;
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--text-muted, #888);
+}
+
+.publication-authors strong {
+  font-weight: 600;
+  color: var(--text, inherit);
+}
+
+.publication-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line, rgba(128, 128, 128, 0.3));
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  color: var(--text-muted, #888);
+}
+
+.publication-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 26px;
+  padding: 12px 0;
+  border-bottom: 1px solid currentColor;
+  color: var(--text, inherit);
+  font-size: 12px;
+  text-decoration: none;
+  transition: opacity 180ms ease, gap 180ms ease;
+}
+
+.publication-link:hover {
+  gap: 32px;
+}
+
+.publication-link-arrow {
+  font-size: 17px;
+}
+
+.publication-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding: 14px 22px;
+  border-top: 1px solid var(--line, rgba(128, 128, 128, 0.3));
+  line-height: 1.8;
+  color: var(--text-muted, #888);
+}
+
+@media (max-width: 600px) {
+  .publication-topline {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 14px 16px;
+  }
+
+  .publication-body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding: 24px 18px;
+  }
+
+  .publication-mark {
+    flex-direction: row;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .publication-mark span:first-child {
+    font-size: 23px;
+  }
+
+  .publication-mark-line {
+    width: 20px;
+    margin: 0 2px;
+  }
+
+  .publication-copy h3 {
+    font-size: clamp(22px, 6vw, 29px);
+    overflow-wrap: anywhere;
+  }
+
+  .publication-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .publication-footer {
+    flex-direction: column;
+    padding: 14px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .publication-link {
+    transition: none;
+  }
+}
+
+
+
+
+/* ── Responsive layouts ────────────────────────────────────── */
+
+@media (max-width: 800px) {
+  .case-heading {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .status-label {
+    justify-self: start;
+  }
+/*
+  .project-gallery {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: start;
+  }
+
+  /* Keep the asymmetrical layout, but avoid fixed row spans.
+     Each image's rendered height now follows its aspect ratio. */
+  /*.gallery-main,
+  .gallery-proj2 .gallery-main,
+  .gallery-proj3 .gallery-main {
+    grid-column: 1 / span 5;
+    grid-row: auto;
+    min-height: 0;
+    margin-top: 0;
+  }
+
+  .gallery-detail,
+  .gallery-proj2 .gallery-detail,
+  .gallery-proj3 .gallery-detail {
+    grid-column: 3 / span 4;
+    grid-row: auto;
+    min-height: 0;
+    margin-top: 2rem;
+  }
+
+  .gallery-wide,
+  .gallery-proj2 .gallery-wide,
+  .gallery-proj3 .gallery-wide {
+    grid-column: 1 / span 5;
+    grid-row: auto;
+    min-height: 0;
+    margin-top: 0;
+  }
+
+  .gallery-float,
+  .gallery-proj3 .gallery-float {
+    grid-column: 3 / span 4;
+    grid-row: auto;
+    min-height: 0;
+    margin-top: 8%;
+  }
+
+  .gallery-extra,
+  .gallery-proj3 .gallery-extra {
+    grid-column: 1 / span 4;
+    grid-row: auto;
+    min-height: 0;
+    margin-top: 0;
+  }
+  */
+
+  .project-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    align-items: start;
+  }
+
+  .project-gallery .gallery-item,
+  .project-gallery .gallery-main,
+  .project-gallery .gallery-detail,
+  .project-gallery .gallery-wide,
+  .project-gallery .gallery-float,
+  .project-gallery .gallery-extra {
+    grid-column: auto;
+    grid-row: auto;
+    min-width: 0;
+    min-height: 0;
+    margin-top: 1rem;
+    align-self: start;
+  }
+
+  .project-gallery .gallery-main,
+  .project-gallery .gallery-wide {
+    grid-column: 1 / -1;
+  }
+
+  .project-gallery .gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    object-fit: contain;
+  }
+
+
+
+
+
+  .project-gallery .gallery-item {
+    position: relative;
+    top: auto;
+    transform: none;
+    margin-block: 0;
+    height: auto;
+    align-self: start;
+  }
+
+  .project-gallery .gallery-item img {
+    position: relative;
+    height: auto;
+    max-height: none;
+  }
+
+  .project-gallery .gallery-item figcaption {
+    position: relative;
+    inset: auto;
+    height: auto;
+  }
+
+
+
+
+
+  .project-gallery .gallery-item figcaption {
+    padding: 24px 12px 12px;
+    gap: 8px;
+    font-size: 8px;
+    overflow-wrap: anywhere;
+  }
+
+  .case-content-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .documentation-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .documentation-heading h3,
+  .documentation-heading > p:last-child {
+    grid-column: 1;
+  }
+
+  .documentation-heading > p:last-child {
+    margin-top: 20px;
+  }
+
+  .documentation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .documentation-grid article,
+  .documentation-grid article + article {
+    padding: 24px 0;
+    border-left: 0;
+    border-bottom: 1px solid var(--editorial-line);
+  }
+
+  .documentation-grid article:last-child {
+    border-bottom: 0;
+  }
+
+  .doc-index {
+    margin-bottom: 14px;
+  }
+
+  .documentation-links {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .documentation-links > span {
+    margin: 0 0 4px;
+  }
+
+  .work-intro-line {
+    font-size: 8px;
+  }
+
+  .cinematic-frame figcaption {
+    left: 20px;
+    bottom: 20px;
+  }
+  .spec-panel
+  {
+    padding:18px
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero h1 {
+    font-size: clamp(54px, 16vw, 78px);
+  }
+/*
+  .project-gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .gallery-main,
+  .gallery-proj2 .gallery-main,
+  .gallery-proj3 .gallery-main {
+    grid-column: 1 / span 4;
+  }
+
+  .gallery-detail,
+  .gallery-proj2 .gallery-detail,
+  .gallery-proj3 .gallery-detail {
+    grid-column: 2 / span 3;
+    margin-top: 0rem;
+  }
+
+  .gallery-wide,
+  .gallery-proj2 .gallery-wide,
+  .gallery-proj3 .gallery-wide {
+    grid-column: 1 / span 4;
+  }
+
+  .gallery-float,
+  .gallery-proj3 .gallery-float {
+    grid-column: 2 / span 3;
+  }
+
+  .gallery-extra,
+  .gallery-proj3 .gallery-extra {
+    grid-column: 1 / span 3;
+  }
+
+  .gallery-item img {
+    min-height: 0;
+  }
+*/
+  .project-gallery {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .project-gallery .gallery-main,
+  .project-gallery .gallery-detail,
+  .project-gallery .gallery-wide,
+  .project-gallery .gallery-float,
+  .project-gallery .gallery-extra {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+  }
+
+  .project-gallery .gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .gallery-item figcaption {
+    padding: 24px 12px 12px;
+    font-size: 8px;
+  }
+
+  .documentation-block {
+    padding: 24px 1rem;
+  }
+
+  .detail-body {
+    font-size: 14px;
+  }
+
+
+
+
+   .contact-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .contact-actions .button,
+  .contact-actions .copy-email {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contact-actions .button {
+    gap: 8px;
+    padding-inline: 10px;
+    white-space: nowrap;
+  }
+
+  .contact-actions .copy-email {
+    gap: 6px;
+    white-space: nowrap;
+    font-size: 11px;
+  }
+  
+}
+
+/* ── Reduced motion ────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal-ready [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,196 @@
+/* Services, project cards and homepage content sections. Extracted from the original stylesheet; rule order preserved. */
+/* Services and project cards */
+.svc-grid
+{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  border-block:1px solid var(--line)
+}
+
+.svc
+{
+  display:flex;
+  min-width:0;
+  flex-direction:column;
+  align-items:flex-start;
+  padding:24px clamp(14px,2vw,28px) 26px;
+  border-left:1px solid var(--line)
+}
+
+.svc:first-child
+{
+  padding-left:0;
+  border-left:0
+}
+
+.svc>i
+{
+  color:var(--green-dark);
+  font:normal 10px/1.5 var(--mono)
+}
+
+.svc h3
+{
+  margin-top:26px;
+  font-size:clamp(19px,1.8vw,25px);
+  letter-spacing:-.045em
+}
+
+.svc p
+{
+  margin-top:14px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.8
+}
+
+.svc small
+{
+  margin-top:auto;
+  padding-top:24px;
+  color:var(--muted);
+  font:8px/1.7 var(--mono);
+  letter-spacing:.035em
+}
+
+.fgrid,.project-grid
+{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(16px,2vw,28px)
+}
+
+.project-card
+{
+  display:flex;
+  min-width:0;
+  flex-direction:column;
+  border:1px solid var(--line);
+  background:var(--paper-card);
+  transition:border-color .2s,transform .25s var(--ease),box-shadow .25s
+}
+
+.project-card:hover
+{
+  transform:translateY(-4px);
+  border-color:var(--muted);
+  box-shadow:0 14px 34px #00000012
+}
+
+.project-card>a:first-child
+{
+  display:block;
+  padding:clamp(9px,1.4vw,16px) clamp(9px,1.4vw,16px) 0
+}
+
+.shot,.case-image,.about-portrait
+{
+  position:relative;
+  overflow:hidden;
+  margin:0;
+  border:1px solid var(--line);
+  background:var(--paper-deep)
+}
+
+.shot
+{
+  padding:clamp(8px,1.2vw,14px)
+}
+
+.shot img
+{
+  width:100%;
+  aspect-ratio:1.35/1;
+  object-fit:contain;
+  object-position:center;
+  padding:clamp(4px,.8vw,10px);
+  transition:transform .45s var(--ease)
+}
+
+.project-card:hover .shot img
+{
+  transform:scale(1.025)
+}
+
+.shot figcaption,.case-image figcaption,.about-portrait figcaption
+{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 2px 2px;
+  color:var(--muted);
+  font:8px/1.5 var(--mono);
+  letter-spacing:.07em
+}
+
+.shot.no-img img,.case-image.no-img img,.about-portrait.no-img img
+{
+  display:none
+}
+
+.shot.no-img::before,.case-image.no-img::before,.about-portrait.no-img::before
+{
+  display:grid;
+  min-height:190px;
+  place-items:center;
+  color:var(--muted);
+  content:"IMAGE / NOT PROVIDED";
+  font:10px/1.5 var(--mono);
+  letter-spacing:.08em
+}
+
+.project-info
+{
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  padding:22px clamp(16px,2vw,26px) 20px
+}
+
+.project-kicker
+{
+  color:var(--muted);
+  font:8px/1.6 var(--mono);
+  letter-spacing:.055em
+}
+
+.project-info h3
+{
+  margin-top:14px;
+  font-size:clamp(22px,2.3vw,30px)
+}
+
+.project-info>p:not(.project-kicker)
+{
+  margin-top:12px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.8
+}
+
+.project-foot
+{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:auto;
+  padding-top:26px;
+  color:var(--muted);
+  font:8px/1.5 var(--mono);
+  letter-spacing:.04em
+}
+
+.project-foot a
+{
+  color:var(--ink);
+  font:700 11px var(--sans);
+  white-space:nowrap
+}
+
+.project-foot a span
+{
+  color:var(--green-dark)
+}
+

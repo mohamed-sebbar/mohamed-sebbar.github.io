@@ -1,0 +1,173 @@
+<article class="case-study case-study-proj2" id="project-proj2" data-project="proj2">
+  <div class="case-heading">
+    <div>
+      <p class="eyebrow">02 / STM32 &middot; MEASUREMENT &middot; 4-LAYER</p>
+      <h2>
+        Making current
+        <em>visible.</em>
+      </h2>
+      <p class="case-lead">
+        A four-layer STM32F411 platform designed for precision current-signature acquisition as a foundation for non-invasive anomaly-detection research.
+      </p>
+    </div>
+    <span class="status-label status-complete">THESIS / VALIDATED</span>
+  </div>
+
+  <div class="project-gallery project-gallery-proj2 gallery-proj2" data-project-gallery="proj2" aria-label="STM32 acquisition platform imagery">
+    <figure class="gallery-item gallery-item-proj2 gallery-main gallery-main-proj2" data-reveal>
+      <img alt="STM32F411 four-layer current-signature acquisition board render" loading="lazy" src="images/stm32-board.png"/>
+      <figcaption><span>01</span> STM32F411 / 3D HARDWARE VIEW</figcaption>
+    </figure>
+    <figure class="gallery-item gallery-item-proj2 gallery-detail gallery-detail-proj2" data-reveal>
+      <img alt="Detailed PCB view of the INA226 current measurement and sensing section" loading="lazy" src="images/stm32-sensing.png"/>
+      <figcaption><span>02</span> CURRENT SENSING / PSD PLOT</figcaption>
+    </figure>
+    <figure class="gallery-item gallery-item-proj2 gallery-wide gallery-wide-proj2" data-reveal>
+      <img alt="Four-layer PCB layout and ground-plane implementation" loading="lazy" src="images/stm32-pcb.png"/>
+      <figcaption><span>03</span> PCB: FRONT VIEW / FOUR-LAYER STACK-UP</figcaption>
+    </figure>
+  </div>
+
+
+  <section class="publication-card" aria-label="Published research">
+    <div class="publication-topline">
+      <span class="publication-kicker">RESEARCH / PUBLICATION</span>
+      <span class="publication-status">
+        <span class="publication-status-dot"></span>
+        ACCEPTED MANUSCRIPT
+      </span>
+    </div>
+
+    <div class="publication-body">
+      <div class="publication-mark" aria-hidden="true">
+        <span>IOP</span>
+        <span>SCIENCE</span>
+        <span class="publication-mark-line"></span>
+        <span class="publication-mark-year">2026</span>
+      </div>
+
+      <div class="publication-copy">
+        <p class="publication-journal">Engineering Research Express · IOP Publishing</p>
+        <h3>
+          Design and Experimental Validation of an STM32-Based Embedded Platform
+          for Non-Invasive Current Signature Acquisition in Anomaly-Detection Applications
+        </h3>
+
+        <p class="publication-authors">
+          Abdelhafid El Farnane, <strong>Mohamed Sebbar</strong>, Omar Chahir,
+          Mustapha Elyaqouti, Elhanafi Arjdal, Brahim Moudoud and Aziz Dkiouak
+        </p>
+
+        <div class="publication-meta">
+          <span>Published online · 20 October 2026</span>
+          <span>DOI: 10.1088/2631-8695/aeb6a1</span>
+        </div>
+
+        <a
+          class="publication-link"
+          href="https://doi.org/10.1088/2631-8695/aeb6a1"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Read the published STM32 current-signature acquisition paper"
+        >
+          <span>Read the paper</span>
+          <span class="publication-link-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="publication-footer">
+      <span>STM32F411 / CURRENT SIGNATURE ACQUISITION</span>
+      <span>DOI REGISTERED PUBLICATION</span>
+    </div>
+  </section>
+  
+  <div class="case-content-grid">
+    <div class="case-content">
+      <h3>Engineering focus</h3>
+      <p>
+        The platform combines an STM32F411 microcontroller with an INA226 current and bus-voltage monitor, USB connectivity and a four-layer PCB stack-up. The design emphasizes a repeatable acquisition path, clear grounding, power integrity and practical firmware communication.
+      </p>
+      <p>
+        The work includes schematic and PCB design, design-rule checks, manufacturing outputs, firmware integration and experimental acquisition. Predictive maintenance is the application context; the project is presented as an acquisition and validation platform, not as a completed anomaly classifier.
+      </p>
+    </div>
+
+    <aside class="spec-panel">
+      <h3>Implemented details</h3>
+      <dl>
+        <div>
+          <dt>MCU</dt>
+          <dd>STM32F411CEU6</dd>
+        </div>
+        <div>
+          <dt>Measurement</dt>
+          <dd>INA226 current / bus voltage</dd>
+        </div>
+        <div>
+          <dt>PCB</dt>
+          <dd>Four layers &middot; 54 &times; 35 mm</dd>
+        </div>
+        <div>
+          <dt>Interface</dt>
+          <dd>USB FS CDC / DFU support</dd>
+        </div>
+        <div>
+          <dt>Acquisition</dt>
+          <dd>Approximately 664 Hz in the documented setup</dd>
+        </div>
+      </dl>
+    </aside>
+  </div>
+
+  <section class="documentation-block" aria-label="STM32 platform documentation">
+    <div class="documentation-heading">
+      <p class="eyebrow">ENGINEERING NOTES / 02</p>
+      <h3>Measured, documented, <em>validated.</em></h3>
+      <p>The work is organized around the acquisition path and the evidence available from the implemented platform.</p>
+    </div>
+
+    <div class="documentation-grid">
+      <article>
+        <span class="doc-index">A / ARCHITECTURE</span>
+        <h4>Measurement chain</h4>
+        <p>STM32F411CEU6, INA226 monitoring, 0.5 Ω shunt, USB CDC/DFU path and timestamped acquisition firmware.</p>
+      </article>
+      <article>
+        <span class="doc-index">B / PCB & FIRMWARE</span>
+        <h4>Implementation</h4>
+        <p>Four-layer 54 × 35 mm PCB, grounding and power layout, manufacturing files, bare-metal C with STM32 HAL and USB transfer.</p>
+      </article>
+      <article>
+        <span class="doc-index">C / VALIDATION</span>
+        <h4>Experimental results</h4>
+        <p>Acquisition demonstrated at approximately 664 Hz in the documented USB setup. This is an acquisition platform, not a completed anomaly classifier.</p>
+      </article>
+    </div>
+
+    <div class="documentation-links">
+      <span>SOURCE / DOCUMENTATION</span>
+      <a href="https://github.com/mohamed-sebbar/STM32-Current-Signature-Platform" target="_blank" rel="noreferrer">GitHub repository <b>↗</b></a>
+      <!-- 
+      <a href="mailto:sebbar.mohamed66@gmail.com?subject=STM32%20platform%20documentation">Thesis & supporting documentation <b>↗</b></a> 
+      -->
+    </div>
+  </section>
+
+  <details class="case-detail">
+    <summary>More about validation and deliverables</summary>
+    <div class="detail-body">
+      <p>
+        The work covers acquisition firmware, USB data transfer, PCB manufacturing outputs and experimental checks of the measurement path. The observed throughput is described in the context of the implemented USB acquisition pipeline.
+      </p>
+      <p>
+        Hardware license: CERN-OHL-P. Firmware license: Apache-2.0. Consult the
+        <a href="https://github.com/mohamed-sebbar/STM32-Current-Signature-Platform" rel="noreferrer" target="_blank">
+          project repository &nearrow;
+        </a>
+        for source and supporting material.
+      </p>
+    </div>
+  </details>
+
+</article>

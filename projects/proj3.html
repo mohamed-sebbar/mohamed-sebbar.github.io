@@ -1,0 +1,120 @@
+<!-- PROJECT 1: FPGA DATA-ACQUISITION PLATFORM -->
+<article class="case-study case-study-proj1" id="project-proj1" data-project="proj1">
+  <div class="case-heading">
+    <div>
+      <p class="eyebrow">01 / FPGA &middot; DATA ACQUISITION &middot; POWER</p>
+      <h2>
+        Acquisition,
+        <em>at the edge.</em>
+      </h2>
+      <p class="case-lead">
+        A Spartan-7-based real-time acquisition platform planned around simultaneous-sampling ADCs, external memory, power domains and board-level interfaces.
+      </p>
+    </div>
+    <span class="status-label status-progress">PLATFORM DESIGN</span>
+  </div>
+
+  <div class="project-gallery project-gallery-proj1 gallery-proj1" data-project-gallery="proj1" aria-label="FPGA platform imagery">
+    <figure class="gallery-item gallery-item-proj1 gallery-main gallery-main-proj1" data-reveal>
+      <img alt="Cinematic three-dimensional render of the Spartan-7 data-acquisition platform" loading="lazy" src="images/fpga-diagram.png"/>
+      <figcaption><span>01</span> PLATFORM / DIAGRAM</figcaption>
+    </figure>   
+    <figure class="gallery-item gallery-item-proj1 gallery-detail gallery-detail-proj1" data-reveal>
+      <img alt="Detailed view of the FPGA platform power and converter region" loading="lazy" src="images/fpga-reset-sim.png"/>
+      <figcaption><span>02</span> SIMULATION / RESET CIRCUIT</figcaption>
+    </figure>
+    <!--
+    <figure class="gallery-item gallery-item-proj1 gallery-wide gallery-wide-proj1" data-reveal>
+      <img alt="FPGA platform PCB layout and interface routing detail" loading="lazy" src="images/fpga-pcb-layout.png"/>
+      <figcaption><span>03</span> SIX-LAYER PCB / ROUTING</figcaption>
+    </figure>
+    <figure class="gallery-item gallery-item-proj1 gallery-float gallery-float-proj1" data-reveal>
+      <img alt="FPGA platform system architecture and interface overview" loading="lazy" src="images/fpga-architecture.png"/>
+      <figcaption><span>04</span> SYSTEM ARCHITECTURE</figcaption>
+    </figure>
+    -->
+  </div>
+
+  <div class="case-content-grid">
+    <div class="case-content">
+      <h3>Engineering focus</h3>
+      <p>
+        The platform targets multichannel acquisition and deterministic digital interfacing. The design work covers system requirements, FPGA bank and pin planning, converter interfaces, memory connectivity, clocking, board stack-up and power budgeting.
+      </p>
+      <p>
+        The implementation is being treated as a system-level hardware design: interface constraints, power and reset behavior, connector mapping and manufacturing documentation are considered together rather than as isolated schematic tasks.
+      </p>
+    </div>
+
+    <aside class="spec-panel">
+      <h3>Design scope</h3>
+      <dl>
+        <div>
+          <dt>FPGA</dt>
+          <dd>Xilinx Spartan-7 XC7S50</dd>
+        </div>
+        <div>
+          <dt>Acquisition</dt>
+          <dd>Dual AD7606-family ADC interfaces</dd>
+        </div>
+        <div>
+          <dt>PCB</dt>
+          <dd>Six-layer platform</dd>
+        </div>
+        <div>
+          <dt>Documentation</dt>
+          <dd>TRD, schematics, PCB and design notes</dd>
+        </div>
+      </dl>
+    </aside>
+  </div>
+
+  <section class="documentation-block" aria-label="FPGA platform documentation">
+    <div class="documentation-heading">
+      <p class="eyebrow">ENGINEERING NOTES / 01</p>
+      <h3>From requirements <em>to board definition.</em></h3>
+      <p>A concise map of the engineering work behind this platform. Design-stage status is stated explicitly.</p>
+    </div>
+
+    <div class="documentation-grid">
+      <article>
+        <span class="doc-index">A / ARCHITECTURE</span>
+        <h4>System definition</h4>
+        <p>Requirements, ADC and memory interfaces, clocking, FPGA bank/pin planning, reset strategy and connector mapping.</p>
+      </article>
+      <article>
+        <span class="doc-index">B / IMPLEMENTATION</span>
+        <h4>Board-level design</h4>
+        <p>Six-layer PCB planning, controlled-impedance considerations, power budget, return paths, manufacturing outputs and BOM planning.</p>
+      </article>
+      <article>
+        <span class="doc-index">C / STATUS</span>
+        <h4>Design in progress</h4>
+        <p>TRD and board design work. Physical bring-up, measured performance and certification are not claimed.</p>
+      </article>
+    </div>
+
+    <div class="documentation-links">
+      <span>DOCUMENTATION</span>
+        <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=sebbar.mohamed66%40gmail.com&su=FPGA%20platform%20documentation"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+        Request project documentation <b>↗</b></a>
+    </div>
+  </section>
+
+  <details class="case-detail">
+    <summary>More about the design decisions</summary>
+    <div class="detail-body">
+      <p>
+        Key considerations include separating noisy and sensitive power branches, planning clock and memory connections, budgeting IO banks and connectors, defining reset behavior, and accounting for controlled-impedance routing and return paths during placement.
+      </p>
+      <p>
+        <strong>Status:</strong>
+        design and documentation work. This is not a claim of completed physical bring-up or product certification.
+      </p>
+    </div>
+  </details>
+</article>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+  <head>
+      <meta charset="utf-8"/>
+      <meta content="width=device-width, initial-scale=1" name="viewport"/>
+      <meta content="#f5f4ef" name="theme-color"/>
+      <meta content="About Mohamed Sebbar, embedded hardware and electronics engineer focused on board-level design, FPGA platforms and precision instrumentation." name="description"/>
+      
+      <title> About &mdash; Mohamed Sebbar </title>
+
+      <script>
+        try{var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}
+      </script>
+      
+      <link href="https://fonts.googleapis.com" rel="preconnect"/>
+      <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+      <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+      <link href="css/00-foundation.css" rel="stylesheet"/>
+      <link href="css/01-navigation-components.css" rel="stylesheet"/>
+      <link href="css/02-home-hero.css" rel="stylesheet"/>
+      <link href="css/03-home-sections.css" rel="stylesheet"/>
+      <link href="css/04-contact.css" rel="stylesheet"/>
+      <link href="css/05-project-pages.css" rel="stylesheet"/>
+      <link href="css/06-about-footer.css" rel="stylesheet"/>
+      <link href="css/07-responsive-base.css" rel="stylesheet"/>
+      <link href="css/08-editorial-overrides.css" rel="stylesheet"/>
+      
+      <script defer="" src="script.js"> </script>
+  </head>
+ 
+  <body>
+  
+  <a class="skip-link" href="#main"> Skip to content </a>
+  
+  <div class="site-shell">
+   
+    <header class="site-header">
+      <a aria-label="Mohamed Sebbar home" class="wordmark" href="index.html">
+        <span class="wordmark-mark"> MS <span> &nearrow; </span> </span>
+        <span class="wordmark-name"> MOHAMED SEBBAR <small> EMBEDDED HARDWARE / ELECTRONICS </small> </span>
+      </a>
+
+      <nav aria-label="Main navigation" class="main-nav">
+        <a href="index.html"> Work </a>
+        <a aria-current="page" class="is-current" href="about.html"> About </a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="header-contact" href="#contact"> Let's talk <span> &nearrow; </span> </a>
+
+        <button aria-label="Toggle dark mode" aria-pressed="false" class="theme-toggle" type="button">
+          <span aria-hidden="true" class="moon"> ☾ </span>
+          <span aria-hidden="true" class="sun"> ☀ </span>
+        </button>
+
+        <button aria-controls="mobile-nav" aria-expanded="false" aria-label="Open navigation" class="menu-toggle" type="button">
+          <span> </span>
+          <span> </span>
+        </button>
+      </div>
+    </header>
+   
+    <nav aria-label="Mobile navigation" class="mobile-nav" id="mobile-nav" inert="">
+      <a href="index.html"> Work <span> 01 </span> </a>
+      <a aria-current="page" href="about.html"> About <span> 02 </span> </a>
+      <a href="#contact"> Get in touch <span> &nearrow; </span> </a>
+    </nav>
+   
+   <main id="main">
+
+    <section class="page-hero section-pad">
+      <p class="eyebrow">
+        <span class="status-dot">
+        </span> ABOUT / ENGINEERING APPROACH
+      </p>
+
+      <h1> I care about what happens <em> after the schematic. </em> </h1>
+      
+      <p class="page-lead">
+        A board is more than a collection of components. It is a set of electrical, mechanical, manufacturing and test decisions that have to work together in the real world.
+      </p>
+
+      <div class="page-hero-meta">
+        <span> 01 / ARCHITECTURE </span>
+        <span> 02 / IMPLEMENTATION </span>
+        <span> 03 / VALIDATION </span>
+      </div>
+
+    </section>
+
+    <section aria-labelledby="about-intro-title" class="about-intro section-pad">
+      <div class="about-portrait-wrap">
+        <img alt="Portrait of Mohamed Sebbar" loading="lazy" src="images/profile.jpg"/>
+      </div>
+
+      <div class="about-copy">
+        <p class="eyebrow"> THE ENGINEER BEHIND THE BOARDS </p>
+        <h2 id="about-intro-title"> From embedded circuits to <em> digital hardware. </em> </h2>
+        
+        <p>
+        I&rsquo;m an embedded hardware and electronics engineer with a strong interest in how computing is built below the software layer: power delivery, signal paths, interfaces, timing, and the physical constraints that shape a reliable system.
+        </p>
+
+        <p>
+          My work spans multilayer PCB design, mixed-signal measurement, RF-aware layouts, power architecture and FPGA-based acquisition platforms. I like understanding why a design works, documenting the decisions, and making the next engineering step explicit.
+        </p>
+
+        <p>
+          My longer-term direction is toward digital hardware architecture, IC/ASIC design and semiconductor engineering, while continuing to build practical board-level experience.
+        </p>
+
+        <div class="about-actions">
+          <a class="button button-dark" href="index.html">
+            Explore selected work <span> &rarr; </span>
+          </a>
+          
+          <a class="text-link" href="cv.pdf">
+            Download CV <span> &darr; </span>
+          </a>
+        </div>
+      </div>
+      
+    </section>
+
+    <section class="principles section-pad">
+      <div class="section-heading">
+
+        <div>
+          <p class="eyebrow"> HOW I APPROACH A DESIGN </p>
+          <h2> Good engineering is <em> connected thinking. </em> </h2>
+        </div>
+
+        <p>
+        Hardware decisions rarely live in isolation. The board, firmware, interfaces, power budget and test strategy have to agree.
+        </p>
+        
+      </div>
+
+      <div class="principle-grid">
+        <article class="principle">
+          <span class="principle-index"> 01 </span>
+          <h3> Start with constraints </h3>
+          
+          <p>
+            Define interfaces, power rails, timing, mechanical limits and manufacturing needs before committing to the layout.
+          </p>
+
+        </article>
+
+        <article class="principle">
+          <span class="principle-index"> 02 </span>
+          <h3> Design for the return path </h3>
+          
+          <p>
+            Stack-up, reference planes, current loops and connector transitions are part of the circuit&mdash;not finishing touches.
+          </p>
+        </article>
+
+        <article class="principle">
+          <span class="principle-index"> 03 </span>
+          <h3> Make decisions reviewable </h3>
+          <p>
+            Keep schematics, requirements, calculations, BOMs and manufacturing outputs clear enough for another engineer to verify.
+          </p>
+        </article>
+
+        <article class="principle">
+          <span class="principle-index"> 04 </span>
+          <h3> Validate what is claimed </h3>
+          <p>
+            Separate simulation from measurement, a design from a built board, and a working prototype from a qualified product.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="trajectory section-pad">
+      <div class="section-heading">
+        <div>
+        <p class="eyebrow"> EDUCATION &amp; DIRECTION </p>
+        <h2> Building from <em> the board upward. </em> </h2>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <span class="timeline-date"> 2024&mdash;2026 <br> <b>Ibn Zohr University</b> </span>
+          <div>
+            <h3> M.Sc. &mdash; Embedded Systems &amp; Computer Engineering </h3>
+            <p>
+              Research thesis on a four-layer STM32F411 platform for precision current-signature acquisition with publication.
+            </p>
+          </div>
+          <span class="timeline-tag"> COMPLETED </span>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-date"> 2021&mdash;2024 <br> <b>Ibn Zohr University</b> </span>
+          <div>
+            <h3> B.Sc. &mdash; Embedded Systems &amp; Computer Engineering </h3>
+            <p>
+              Strong foundation in mathematics, physics, embedded systems, electronics, computer engineering and hardware/software interfaces.
+            </p>
+          </div>
+          <span class="timeline-tag"> COMPLETED </span>
+        </article>
+
+      </div>
+
+    </section>
+
+    <section class="contact section-pad" id="contact">
+      <div class="contact-top">
+        <p class="eyebrow"> <span class="status-dot"> </span> OPEN TO HARDWARE OPPORTUNITIES </p>
+        <span class="contact-index"> ENGINEERING / COLLABORATION </span>
+      </div>
+
+      <h2> Let's talk about
+        <br/>
+        <em> the hardware. </em>
+      </h2>
+
+      <div class="contact-bottom">
+      
+        <p>
+        For a hardware role, a technical collaboration or a project that needs careful board-level thinking, send me the context.
+        </p>
+
+        <div class="contact-actions">
+          <a
+            class="button button-light"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=sebbar.mohamed66%40gmail.com&su=Hardware%20inquiry"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+              Start a conversation
+              <span aria-hidden="true">&nearrow;</span>
+          </a>
+
+          <button class="copy-email" data-copy-email="sebbar.mohamed66@gmail.com" type="button">
+            Copy email <span aria-hidden="true"> ▣ </span>
+          </button>
+        </div>
+      </div>
+     
+      <div aria-hidden="true" class="contact-orbit">
+     </div>
+    </section>
+   </main>
+   
+  <footer class="site-footer">
+    <a aria-label="Back to home" class="footer-mark" href="index.html">
+      MS <span> &nearrow; </span>
+    </a>
+                
+    <span> &copy;
+      <span id="year"> 2026 </span> MOHAMED SEBBAR
+    </span>
+
+    <span>
+      DESIGNED WITH INTENT. BUILT TO CONNECT.
+    </span>
+
+    <nav aria-label="Footer navigation" class="footer-links">
+      <a href="index.html"> Work </a>
+      <a href="about.html"> About </a>
+      <a href="https://www.linkedin.com/" rel="noreferrer" target="_blank"> LinkedIn &nearrow; </a>
+      <a href="https://github.com/mohamed-sebbar" rel="noreferrer" target="_blank"> GitHub &nearrow; </a>
+    </nav>
+                
+  </footer>
+  
+  </div>
+  
+  <div aria-live="polite" class="toast" role="status"> </div>
+ 
+</body>
+</html>

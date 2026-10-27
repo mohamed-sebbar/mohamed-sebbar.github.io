@@ -1,0 +1,180 @@
+/* Contact section and paths. Extracted from the original stylesheet; rule order preserved. */
+/* Paths / contact */
+.approach
+{
+  padding-top:clamp(65px,8vw,112px);
+  padding-bottom:clamp(70px,8vw,116px);
+  background:var(--paper-deep)
+}
+
+.approach>h2
+{
+  max-width:950px;
+  margin-top:18px;
+  font-size:clamp(40px,6vw,78px)
+}
+
+.paths
+{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1px;
+  margin-top:clamp(32px,4.5vw,58px);
+  border:1px solid var(--line);
+  background:var(--line)
+}
+
+.path
+{
+  display:flex;
+  min-width:0;
+  flex-direction:column;
+  align-items:flex-start;
+  padding:clamp(24px,4vw,50px);
+  background:var(--paper)
+}
+
+.path.alt,.path-alt
+{
+  background:var(--paper-card)
+}
+
+.path h3
+{
+  margin-top:20px;
+  font-size:clamp(23px,3vw,36px)
+}
+
+.path ul
+{
+  display:grid;
+  gap:10px;
+  margin-top:24px;
+  margin-bottom:28px;
+  color:var(--muted);
+  font-size:12px
+}
+
+.path .button
+{
+  margin-top:auto
+}
+
+.contact
+{
+  position:relative;
+  overflow:hidden;
+  padding-top:clamp(48px,7vw,92px);
+  padding-bottom:clamp(54px,7vw,96px);
+  background:#202720;
+  color:#f5f4ef;
+  isolation:isolate
+}
+
+.contact h2,.contact .eyebrow,.contact .contact-index
+{
+  color:#f5f4ef
+}
+
+.contact .eyebrow
+{
+  color:#c2cbbd
+}
+
+.contact h2
+{
+  position:relative;
+  z-index:1;
+  max-width:950px;
+  margin-top:clamp(32px,4vw,54px);
+  font-size:clamp(54px,8.6vw,116px);
+  letter-spacing:-.075em
+}
+
+.contact h2 em
+{
+  color:var(--green)
+}
+
+.contact-top,.contact-bottom
+{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px
+}
+
+.contact-index
+{
+  font:9px/1.5 var(--mono);
+  letter-spacing:.07em
+}
+
+.contact-bottom
+{
+  align-items:end;
+  margin-top:clamp(30px,4vw,50px)
+}
+
+.contact-bottom>p
+{
+  max-width:380px;
+  color:#c2cbbd;
+  font-size:13px
+}
+
+.contact-actions
+{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:14px 22px
+}
+
+.copy-email
+{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 0;
+  border:0;
+  background:transparent;
+  color:#f5f4ef;
+  font-size:11px
+}
+
+.copy-email span
+{
+  color:var(--green)
+}
+
+.contact-orbit
+{
+  position:absolute;
+  z-index:-1;
+  top:8%;
+  right:-10%;
+  width:clamp(280px,42vw,620px);
+  aspect-ratio:1;
+  border:1px solid #495449;
+  border-radius:50%;
+  opacity:.65
+}
+
+.contact-orbit::before,.contact-orbit::after
+{
+  position:absolute;
+  inset:10%;
+  border:1px solid #495449;
+  border-radius:50%;
+  content:""
+}
+
+.contact-orbit::after
+{
+  inset:24%;
+  border-style:dashed
+}
+
